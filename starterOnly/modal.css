@@ -35,10 +35,10 @@ img {
   margin: 3.5%;
 }
 .header-logo {
-    float: left;
+  float: left;
 }
 .main-navbar {
-    float: right;
+  float: right;
 }
 .topnav a {
   float: left;
@@ -68,8 +68,10 @@ img {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
-  .topnav a {display: none;}
+@media screen and (max-width: 540px) {
+  .topnav a {
+    display: none;
+  }
   .topnav a.icon {
     float: right;
     display: block;
@@ -77,29 +79,27 @@ img {
 }
 
 @media screen and (max-width: 768px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav a {
+    display: none;
   }
   .topnav.responsive a {
     float: none;
     display: block;
     text-align: left;
   }
-}
-
-
-
- @media screen and (max-width: 540px) {
-  .topnav a {display: none;}
   .topnav a.icon {
     float: right;
     display: block;
-    margin-top: -15px;
   }
-} 
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
 
 main {
   font-size: 130%;
@@ -111,8 +111,6 @@ main {
   margin: 1px 20px 15px;
   border-radius: 2rem;
   text-align: justify;
-
-
 }
 
 .modal-btn {
@@ -188,6 +186,11 @@ main {
   margin: 15px auto;
 }
 
+.modal-success {
+  padding: 15px 8%;
+  margin: 15px auto;
+}
+
 label {
   font-family: var(--font-default);
   font-size: 17px;
@@ -208,7 +211,17 @@ input {
   font-size: 20px;
   height: 48px;
 }
-.formData[data-error]::after {
+
+.error-input {
+  border: 1px solid red;
+}
+
+.error-msg {
+  color: red;
+  font-size: 0.9em;
+}
+
+/* .formData[data-error]::after {
   content: attr(data-error);
   font-size: 0.4em;
   color: #e54858;
@@ -226,11 +239,11 @@ input {
 .formData[data-error-visible="true"] .text-control {
   border: 2px solid #e54858;
 }
-/* 
+
 input[data-error]::after {
-    content: attr(data-error);
-    font-size: 0.4em;
-    color: red;
+  content: attr(data-error);
+  font-size: 0.4em;
+  color: red;
 } */
 .checkbox-label,
 .checkbox2-label {
@@ -526,4 +539,3 @@ footer {
     opacity: 1;
   }
 }
-
