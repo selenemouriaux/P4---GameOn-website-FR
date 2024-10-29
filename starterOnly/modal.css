@@ -181,14 +181,34 @@ main {
   padding-top: 10px;
 }
 
+.thanks {
+  height: 40rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
 }
 
-.modal-success {
-  padding: 15px 8%;
-  margin: 15px auto;
+#confirmationScreen {
+  display: none;
+}
+
+#confirmationScreen.active {
+  display: block;
+}
+
+#reservationForm {
+  opacity: 1;
+}
+
+#reservationForm.active {
+  height: 0;
+  opacity: 0;
 }
 
 label {
@@ -221,7 +241,7 @@ input {
   font-size: 0.9em;
 }
 
-/* .formData[data-error]::after {
+.formData[data-error]::after {
   content: attr(data-error);
   font-size: 0.4em;
   color: #e54858;
@@ -244,7 +264,8 @@ input[data-error]::after {
   content: attr(data-error);
   font-size: 0.4em;
   color: red;
-} */
+}
+
 .checkbox-label,
 .checkbox2-label {
   position: relative;

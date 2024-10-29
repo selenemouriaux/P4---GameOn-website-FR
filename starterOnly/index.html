@@ -17,7 +17,6 @@
       <img alt="logo" src="Logo.png" width="auto" height="auto" />
     </div>
     <div class="main-navbar">
-      
       <a href="#" class="active"><span>Accueil</span></a>
       <a href="#"><span>Détails de l'évènement</span></a>
       <a href="#"><span>À propos</span></a>
@@ -57,10 +56,10 @@
           <span class="close"></span>
           <div class="modal-body">
             <form
+              id="reservationForm"
               name="reserve"
               action="index.html"
               method="get"
-              onsubmit="return validate();"
             >
               <div
                 class="formData">
@@ -70,7 +69,6 @@
                   type="text"
                   id="firstName"
                   name="firstName"
-                  required
                   minlength="2"
                 />
                 <span class="error-msg"></span>
@@ -83,7 +81,6 @@
                   type="text"
                   id="lastName"
                   name="lastName"
-                  required
                   minlength="2"
                 />
                 <span class="error-msg"></span>
@@ -96,7 +93,6 @@
                   type="email"
                   id="email"
                   name="email"
-                  required
                 />
                 <span class="error-msg"></span>
               </div>
@@ -108,14 +104,13 @@
                   type="date"
                   id="dateOfBirth"
                   name="dateOfBirth"
-                  required
                 />
                 <span class="error-msg"></span>
               </div>
               <div
                 class="formData">
                 <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" required>
+                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" >
                 <span class="error-msg"></span>
               </div>
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
@@ -127,7 +122,6 @@
                   id="location1"
                   name="location"
                   value="New York"
-                  required
                 />
                 <label class="checkbox-label" for="location1">
                   <span class="checkbox-icon"></span>
@@ -188,7 +182,9 @@
                   <span class="checkbox-icon"></span>
                   Portland</label
                 >
-                <span class="error-msg"></span>
+                <div>
+                  <span id="locationError" class="error-msg"></span>
+                </div>
               </div>
 
               <div
@@ -196,17 +192,18 @@
                 <input
                   class="checkbox-input"
                   type="checkbox"
-                  id="checkbox1"
+                  id="checkedTerms"
                   name="checkedTerms"
-                  required
                 />
-                <label class="checkbox2-label" for="checkbox1" required>
+                <label class="checkbox2-label" for="checkedTerms" >
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
-                <span class="error-msg"></span>
-                <input class="checkbox-input" type="checkbox" id="checkbox2" name="ckeckedMailingList"/>
-                <label class="checkbox2-label" for="checkbox2">
+                <div>
+                  <span id="checkedTermsError" class="error-msg"></span>
+                </div>
+                <input class="checkbox-input" type="checkbox" id="ckeckedMailingList" name="ckeckedMailingList"/>
+                <label class="checkbox2-label" for="ckeckedMailingList">
                   <span class="checkbox-icon"></span>
                   Je souhaite être prévenu des prochains évènements.
                 </label>
@@ -216,8 +213,12 @@
                 type="submit"
                 class="button"
                 value="C'est parti"
-              />
-            </form>
+                />
+              </form>
+            <div id="confirmationScreen">
+                <h2 class="thanks">Merci pour votre inscription</h2>
+                <button class="btn-submit" id="confirmButton">Fermer</button>
+            </div>
           </div>
         </div>
       </div>
