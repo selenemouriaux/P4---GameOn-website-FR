@@ -144,7 +144,7 @@ function validateTournament() {
   }
 
   if (!isChecked) {
-    tournamentError.textContent = "Veuillez sélectionner un tournoi auquel participer."
+    tournamentError.textContent = "Veuillez sélectionner au moins un tournoi auquel participer."
   } else {
     tournamentError.textContent = ""
     isValid = true
