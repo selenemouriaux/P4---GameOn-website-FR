@@ -496,6 +496,7 @@ input[data-error]::after {
   height: 100%;
   display: block;
   padding: 0;
+  object-fit: cover;
 }
 .copyrights {
   color: #fe142f;
@@ -548,6 +549,12 @@ footer {
   .copyrights {
     margin-top: 50px;
     text-align: center;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .hero-headline {
+    font-size: 3rem;
   }
 }
 
