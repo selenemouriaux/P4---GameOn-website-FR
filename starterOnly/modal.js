@@ -204,7 +204,7 @@ function validateTournament() {
   }
 
   if (!isChecked) {
-    tournamentError.textContent = "Veuillez sélectionner au moins un tournoi auquel participer."
+    tournamentError.textContent = "Veuillez sélectionner un tournoi auquel participer."
   } else {
     tournamentError.textContent = ""
     isValid = true
@@ -267,7 +267,6 @@ document.getElementById("reservationForm").addEventListener("submit", function(e
 
   // if all the test are green, the form is hidden and the success panel is displayed
   if (validateForm()) {
-    console.log('le validate est passé, on met les classes a jour')
     document.getElementById("reservationForm").classList.add("active");
     document.getElementById("confirmationScreen").classList.add("active");
     // a real submit function might get in later, hopefully ^^'
